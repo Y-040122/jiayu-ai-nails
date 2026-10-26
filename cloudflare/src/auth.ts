@@ -12,7 +12,6 @@ if(!attempt)return reply({error:'操作过于频繁，请一小时后再试'},42
 let account=await e().DB.prepare('SELECT * FROM accounts WHERE username=?').bind(username).first();
 if(path==='/api/register'){if(account)return reply({error:'此用户名已注册，请登录或更换用户名'},409);const salt=crypto.randomUUID(),id=crypto.randomUUID();const result=await e().DB.prepare('INSERT OR IGNORE INTO accounts(id,username,salt,password_hash,created_at,display_name) VALUES(?,?,?,?,?,?)').bind(id,username,salt,await hash(password,salt),new Date().toISOString(),displayName).run();if(!result.meta.changes)return reply({error:'此用户名已注册'},409);account={id,username};}
 else{const actual=await hash(password,account?.salt||'unknown-account');if(!account||actual!==account.password_hash)return reply({error:'用户名或密码不正确'},401);}
-if(data.merchant===true&&!account.is_merchant)return reply({error:'当前账号尚未开通商家管理权限，请使用商家账号登录'},403);
 if(!account.display_name)await e().DB.prepare('UPDATE accounts SET display_name=? WHERE id=? AND display_name IS NULL').bind(displayName,account.id).run();
-const payload=btoa(JSON.stringify({role:'member',id:account.id,exp:Date.now()+7*86400000}));return reply({ok:true},200,{'Set-Cookie':`jiayu_session=${payload}.${await sign(payload)}; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age=604800`});
+const payload=btoa(JSON.stringify({role:'member',id:account.id,iat:Date.now(),exp:Date.now()+2*86400000}));return reply({ok:true},200,{'Set-Cookie':`jiayu_session=${payload}.${await sign(payload)}; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age=172800`});
 }

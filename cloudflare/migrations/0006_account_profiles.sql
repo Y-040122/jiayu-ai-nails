@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS account_profiles(account_id TEXT PRIMARY KEY,body TEXT NOT NULL);
