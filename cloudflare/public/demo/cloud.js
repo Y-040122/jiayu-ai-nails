@@ -1,2 +1,10 @@
 const offlineSave=save;save=function(){if(cloudFailed){toast('云端保存冲突，请刷新后重试');return false}if(!offlineSave())return false;pendingCloud=structuredClone(db);flushCloud();return true};async function flushCloud(){if(cloudSaving||!pendingCloud)return;cloudSaving=true;let snapshot=pendingCloud;pendingCloud=null;try{let r=await fetch('/api/state',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({revision:cloudRevision,state:snapshot})});let j=await r.json();if(!r.ok)throw Error(j.error||'云端保存失败');cloudRevision=j.revision;toast('已保存到云端')}catch(e){cloudFailed=true;pendingCloud=null;toast(e.message+'；请刷新后重试')}finally{cloudSaving=false;if(pendingCloud&&!cloudFailed)flushCloud()}}
 const priorHeader=header;header=function(){let h=priorHeader();if(cloudRole!=='merchant')h=h.replace(/<button class="switch"[\s\S]*?<\/button>/,'<a class="switch" href="?merchant=1">商家管理</a>');return h};if(cloudRole==='merchant'){mode='merchant';page='dashboard'}else{mode='user';page='home'}render();
+
+const accountHeader=header;header=function(){return accountHeader().replace('</header>',`<div class="account-actions">${cloudRole==='member'?`<span class="tiny">${E(cloudAccount?.username||'我的账号')}</span><button class="secondary" onclick="logoutAccount()">退出</button>`:cloudRole==='guest'?'<button class="secondary" onclick="authScreen()">登录 / 注册</button>':''}</div></header>`)};
+function requireAccount(){if(cloudRole==='guest'){authScreen();return false}return true}
+const accountFavorite=favorite;favorite=function(id){if(requireAccount())accountFavorite(id)};
+const accountBook=book;book=function(event){if(!requireAccount()){event.preventDefault();return}accountBook(event)};
+const accountSavePlan=savePlan;savePlan=function(){if(requireAccount())accountSavePlan()};
+const accountAvailable=available;available=function(a,d,t,duration,ignore){if(!accountAvailable(a,d,t,duration,ignore))return false;let n=minutes(t);return !(db.busy||[]).some(b=>b.id!==ignore&&b.artist===a&&b.date===d&&!['已取消','已完成'].includes(b.status)&&n<minutes(b.slot)+b.duration&&n+duration>minutes(b.slot))};
+render();
