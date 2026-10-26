@@ -14,3 +14,5 @@ html[data-theme=dark]{--ink:#e1eafb;--muted:#a3b3cc;--pink:#8bb4ff;--line:#2b3d5
 @media(max-width:600px){.account-grid{gap:8px}.account-tile{padding:15px 10px}.account-tile small{font-size:10px}.account-tile strong{font-size:25px}.theme-setting{align-items:flex-start}.theme-setting button{flex-shrink:0;padding:10px}.account-settings{align-items:stretch;flex-direction:column;gap:0}.account-entry{max-width:170px;font-size:12px}.history-row{gap:10px}.history-row>span:last-child{font-size:11px}}
 
 .account-avatar{overflow:hidden;flex-shrink:0}.account-avatar img{width:100%;height:100%;object-fit:cover}.profile-avatar-row{display:flex;align-items:center;gap:20px;margin:24px 0}.avatar-upload{display:inline-block;cursor:pointer}.profile-form .account-settings{margin-top:20px}@media(max-width:600px){.profile-avatar-row{align-items:flex-start;gap:14px}.profile-avatar-row .account-avatar{width:64px;height:64px}.profile-avatar-row .secondary{padding:10px 12px}.profile-avatar-row .back{display:block;margin:12px 0 0!important}}
+
+.try-inputs{border:0;padding:0;margin:0;min-width:0}.try-inputs:disabled .try-picks{opacity:.7}

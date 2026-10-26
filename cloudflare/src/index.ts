@@ -1,3 +1,4 @@
+export {TryOnWorkflow} from './tryon-jobs';
 import { GET, POST, PUT } from './api';
 export default {
  async fetch(request: Request, env: any): Promise<Response> {
