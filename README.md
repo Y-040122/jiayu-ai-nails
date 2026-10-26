@@ -71,3 +71,7 @@ GitHub 用于源码与版本记录；托管站点的专用源码库由 Sites 管
 AI 试戴通过 Cloudflare Workflows 后台执行，网页仅提交任务并轮询状态。每个任务有唯一编号，重试提交和刷新查询不会重复调用生成模型。付费生成步骤关闭自动重试；模型超时或失败由用户主动重试。输入照片在本机进一步压缩，本次照片保留在标签页会话中；任务及结果可在24小时内恢复查询，任务输入在结束时清除。效果图经本站接口加载，可单独重新加载图片。
 
 部署前应用 `0004_tryon_jobs.sql` 数据库迁移，并使用示例配置中的 `TRYON_WORKFLOW` 绑定。实现参考 [Cloudflare Workflows 文档](https://developers.cloudflare.com/workflows/)。
+
+### 产品作品集
+
+手机优先的产品设计案例页：https://jiayu-ai-nails.jiayu-studio.workers.dev/portfolio/ 。包括真实手机尺寸截图、服务流程、交互设计说明、双端协同、迭代复盘与当前验证边界。页面支持功能切换、截图放大、主题对照及截图素材下载。
