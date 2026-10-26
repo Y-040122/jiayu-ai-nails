@@ -1,0 +1,9 @@
+{
+  "name": "jiayu-ai-nails",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-23",
+  "workers_dev": true,
+  "assets": {"directory": "./public", "binding": "ASSETS", "run_worker_first": ["/api/*"]},
+  "d1_databases": [{"binding": "DB", "database_name": "jiayu-demo", "database_id": "REPLACE_WITH_YOUR_D1_DATABASE_ID", "migrations_dir": "migrations"}],
+  "vars": {"JIAYU_VISION_MODEL": "doubao-seed-2-1-pro-260628", "JIAYU_SEEDREAM_MODEL": "doubao-seedream-5-0-pro-260628"}
+}

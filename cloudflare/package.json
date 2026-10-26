@@ -1,0 +1,1 @@
+{"name":"jiayu-ai-nails-worker","version":"0.1.0","private":true,"type":"module","scripts":{"dev":"wrangler dev","check":"wrangler deploy --dry-run","deploy":"wrangler deploy","db:local":"wrangler d1 migrations apply jiayu-demo --local","db:remote":"wrangler d1 migrations apply jiayu-demo --remote"},"devDependencies":{"wrangler":"4.92.0"}}

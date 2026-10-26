@@ -2,9 +2,9 @@
 
 从一张美甲灵感图，到款式需求整理、AI 试戴、预估报价与预约安排的双端交互原型。
 
-**在线体验**：https://jiayu-nail-invite.daringcrumb10.chatgpt.site/demo/index.html
+**在线体验**：https://jiayu-ai-nails.jiayu-studio.workers.dev/demo/index.html
 
-> 在线版普通访客无需体验码；商家管理保留验证。共享演示空间，请不要提交真实顾客联系方式。在线 AI 需要托管端单独配置密钥；不能把本地配置成功等同于线上可用。
+> 在线版普通访客无需体验码；商家管理保留验证。共享演示空间，请不要提交真实顾客联系方式。独立 Cloudflare 版本需要重新配置 AI Secret，AI 可用性以实际验证为准。
 
 ## 核心功能
 
@@ -32,6 +32,10 @@ python3 start_ai.py
 `cloud/`：Sites/Vinext 云端版本，含 D1 迁移、服务端体验码会话、商家权限、云端保存、乐观并发检查与每日共享20次AI调用上限。托管环境变量通过平台密钥设置配置，不提交到源码。
 
 云端是**共享演示空间**，不是独立顾客账户系统。尚不适合直接承载真实门店业务；错误返回、冲突处理和接口调用均需持续实测。AI 试戴可能改变甲缘或饰品细节，不保证实物还原。
+
+## 不带 GPT 的独立网址
+
+`cloudflare/` 提供独立 Cloudflare Workers + D1 部署入口，支持免费平台域名。已发布独立平台网址；旧站暂时保留。详细步骤见 [独立部署说明](cloudflare/README.md)。
 
 ## 持续更新
 
