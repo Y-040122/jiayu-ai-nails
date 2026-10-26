@@ -16,3 +16,5 @@ html[data-theme=dark]{--ink:#e1eafb;--muted:#a3b3cc;--pink:#8bb4ff;--line:#2b3d5
 .account-avatar{overflow:hidden;flex-shrink:0}.account-avatar img{width:100%;height:100%;object-fit:cover}.profile-avatar-row{display:flex;align-items:center;gap:20px;margin:24px 0}.avatar-upload{display:inline-block;cursor:pointer}.profile-form .account-settings{margin-top:20px}@media(max-width:600px){.profile-avatar-row{align-items:flex-start;gap:14px}.profile-avatar-row .account-avatar{width:64px;height:64px}.profile-avatar-row .secondary{padding:10px 12px}.profile-avatar-row .back{display:block;margin:12px 0 0!important}}
 
 .try-inputs{border:0;padding:0;margin:0;min-width:0}.try-inputs:disabled .try-picks{opacity:.7}
+
+#boot-loading{min-height:75vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px;color:var(--muted)}#boot-loading[hidden]{display:none}#boot-loading h1{color:var(--ink);margin-bottom:20px}#boot-loading p{font-size:13px;margin-top:20px}#app[hidden],#gate[hidden]{display:none!important}
