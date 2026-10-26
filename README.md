@@ -74,7 +74,7 @@ AI 试戴通过 Cloudflare Workflows 后台执行，网页仅提交任务并轮�
 
 ### 产品作品集
 
-手机优先的产品设计案例页：https://jiayu-ai-nails.jiayu-studio.workers.dev/portfolio/ 。包括真实手机尺寸截图、服务流程、交互设计说明、双端协同、迭代复盘与当前验证边界。页面支持功能切换、截图放大、主题对照及截图素材下载。
+手机优先的产品设计案例页：https://jiayu-ai-nails.jiayu-studio.workers.dev/portfolio/ 。包括真实手机尺寸截图、服务流程、交互设计说明、双端协同、双入口与两天登录保持、经营概览（服务金额分层、趋势、明细筛选与 CSV 导出）、迭代复盘与当前验证边界。页面支持功能切换、截图放大、主题对照及截图素材下载。
 
 ### 商家账号登录
 

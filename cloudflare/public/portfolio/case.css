@@ -6,3 +6,5 @@
 @media print{.topbar,.mobile-cta,.cover-actions,.closing-actions,.theme-selector,.feature-tabs{display:none}.wrap{width:100%}.section{padding:35px 0}.cover{min-height:0}.phone{box-shadow:none}.feature-layout{break-inside:avoid}.footer{padding-bottom:0}}
 @media(max-width:700px){.cover-visual{overflow:clip;max-width:none;width:calc(100% + 40px);margin-inline:-20px;min-height:0;aspect-ratio:.66}.cover-visual .halo{inset:25px 20px 25px}.cover-visual .phone-back{left:15px;width:53%}.cover-visual .phone-front{right:15px;width:55%}.cover-visual .visual-note{right:22px}.cover-visual .visual-caption{left:24px;bottom:14px}}
 @media(max-width:700px){.personal{overflow:clip}}
+
+.entry-case{display:grid;grid-template-columns:1.1fr .7fr;gap:80px;align-items:center}.entry-shot{margin:0;text-align:center}.entry-shot .phone{width:min(100%,280px);margin:auto}.entry-shot figcaption{font-size:12px;color:#897f83;margin-top:20px}.flow{grid-template-columns:repeat(8,1fr)}@media(max-width:700px){.entry-case{grid-template-columns:1fr;gap:32px}.entry-shot .phone{width:260px}.flow{grid-template-columns:repeat(2,1fr)}}
